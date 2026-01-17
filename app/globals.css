@@ -74,3 +74,74 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
 }
+
+/* Chili Theme Animations */
+@keyframes chili-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2), 0 0 40px rgba(239, 68, 68, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.4), 0 0 80px rgba(239, 68, 68, 0.2);
+  }
+}
+
+@keyframes heat-wave {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  25% { transform: translateY(-2px) scaleX(1.01); }
+  50% { transform: translateY(0) scaleX(0.99); }
+  75% { transform: translateY(2px) scaleX(1.01); }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(100%) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.animate-chili-glow {
+  animation: chili-glow 3s ease-in-out infinite;
+}
+
+.animate-heat-wave {
+  animation: heat-wave 4s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 10s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Premium hover effects */
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Red accent underline animation */
+.underline-red {
+  position: relative;
+}
+
+.underline-red::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  transition: width 0.3s ease;
+}
+
+.underline-red:hover::after {
+  width: 100%;
+}
